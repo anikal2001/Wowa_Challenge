@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head'
+import Head from 'next/head';
 
 type LayoutProps = {
-  title?: string
-}
+  title?: string;
+};
 const layoutStyle = {
   margin: 20,
-  padding: 20
-}
-const Layout: React.FunctionComponent<LayoutProps> = ({ children , title}) => (
+  padding: 20,
+};
+const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => (
   <div style={layoutStyle}>
     <Head>
       <title>{title}</title>
@@ -18,8 +18,8 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children , title}) => (
     </Head>
     {children}
   </div>
-)
+);
 Layout.propTypes = {
-    title: PropTypes.string.isRequired,
-}
-export default Layout
+  title: PropTypes.string.isRequired,
+};
+export default Layout;

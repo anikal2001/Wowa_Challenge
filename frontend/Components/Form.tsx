@@ -1,15 +1,11 @@
-import React, {useContext} from 'react';
-import {
-  createStyles,
-  withStyles,
-  Theme,
-} from '@material-ui/core/styles';
+import React, { useContext } from 'react';
+import { createStyles, withStyles, Theme } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
-import { GlobalContext } from '../contexts/GlobalState'
+import { GlobalContext } from '../contexts/GlobalState';
 
 const BootstrapInput = withStyles((theme: Theme) =>
   createStyles({
@@ -48,10 +44,26 @@ const BootstrapInput = withStyles((theme: Theme) =>
   })
 )(InputBase);
 
-
 const Form: React.FunctionComponent = () => {
-  const {Amortization, TermLength, HomePrice, MortgageAmount, DownPayment, Type} = useContext(GlobalContext)
-  const {changeAmortization, changeTermLength, changeHomePrice, changeMortgageAmount, changeDownPayment,  changeType} = useContext(GlobalContext)
+  // Import constants from context
+  const {
+    Amortization,
+    TermLength,
+    HomePrice,
+    MortgageAmount,
+    DownPayment,
+    Type,
+  } = useContext(GlobalContext);
+  // Import functions from context
+  const {
+    changeAmortization,
+    changeTermLength,
+    changeHomePrice,
+    changeMortgageAmount,
+    changeDownPayment,
+    changeType,
+  } = useContext(GlobalContext);
+  // OnChange Handlers for all the inputs
   const handleHomePriceChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -71,7 +83,7 @@ const Form: React.FunctionComponent = () => {
     // if value is not blank, then test the regex
 
     if (event.target.value === '' || re.test(event.target.value)) {
-      changeMortgageAmount(event.target.value)
+      changeMortgageAmount(event.target.value);
     }
   };
   const handleDownPaymentChange = (
@@ -82,20 +94,21 @@ const Form: React.FunctionComponent = () => {
     // if value is not blank, then test the regex
 
     if (event.target.value === '' || re.test(event.target.value)) {
-      changeDownPayment(event.target.value)
+      changeDownPayment(event.target.value);
     }
   };
-  const handleAmortizationChange = (event: React.ChangeEvent<{ value: unknown}>) => {
-    changeAmortization(event.target.value)
-  }
-  const handleTermChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    changeTermLength(event.target.value)
+  const handleAmortizationChange = (
+    event: React.ChangeEvent<{ value: unknown }>
+  ) => {
+    changeAmortization(event.target.value);
   };
-  const handleTypeChange = (event: React.ChangeEvent<{value: unknown }>) => {
-    changeType(event.target.value)
+  const handleTermChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    changeTermLength(event.target.value);
+  };
+  const handleTypeChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    changeType(event.target.value);
   };
 
-  
   return (
     <form noValidate autoComplete="off">
       <div className="flex mt-6">
@@ -151,7 +164,7 @@ const Form: React.FunctionComponent = () => {
         </FormControl>
       </div>
       <div className="flex flex-col mt-4">
-        <FormControl fullWidth >
+        <FormControl fullWidth>
           <div className="text-xl text-blue-800">Downpayment</div>
           <Input
             id="standard-adornment-amount"
@@ -162,10 +175,10 @@ const Form: React.FunctionComponent = () => {
         </FormControl>
       </div>
       <div className="flex flex-col mt-4">
-        <FormControl >
+        <FormControl>
           <div className="text-xl text-blue-800">Mortgage Amount</div>
           <Input
-          className="text-2xl"
+            className="text-2xl"
             id="standard-adornment-amount"
             value={MortgageAmount}
             onChange={handleMortgageAmountChange}

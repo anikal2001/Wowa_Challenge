@@ -21,15 +21,15 @@ export default (state, action) => {
         DownPayment: action.payload,
       };
     case 'CHANGE_MORTGAGE_AMOUNT':
-        return {
-            ...state,
-            MortgageAmount: action.payload
-        }
+      return {
+        ...state,
+        MortgageAmount: action.payload,
+      };
     case 'CHANGE_AMORTIZATION':
-        return {
-            ...state,
-            Amortization: action.payload
-        }
+      return {
+        ...state,
+        Amortization: action.payload,
+      };
     default:
       return state;
   }
