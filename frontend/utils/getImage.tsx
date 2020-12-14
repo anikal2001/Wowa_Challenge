@@ -37,6 +37,28 @@ export default function getImage(source: string) {
       return 'alterna-savings.png';
     case 'Desjardins':
       return './desjardins.png';
+    case 'Equitable':
+      return './Equitable.svg'
+    case 'North East Mortgages':
+      return 'North-East.png'
+    case 'Meridian':
+      return 'Meridian_Logo.svg'
+    case 'HSBC':
+      return 'hsbc.svg'
+    case 'The Mortgage Centre':
+      return './The Mortgage Centre.png'
+    case 'Coast Capital':
+      return './Coast Capital.png'
+    case 'MtgAlliance':
+      return './Mortgage Alliance.png'
+    case 'Canada Life':
+      return './Canada Life.png'
+    case 'Dominion Lending':
+      return './Dominion Lending.png'
+    case 'Canadian Western':
+      return './Canadian Western.png'
+    case 'DUCA':
+      return './DUCA.png'
     default:
       return './td.png';
   }
