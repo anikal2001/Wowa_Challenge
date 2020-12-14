@@ -158,6 +158,7 @@ const Form: React.FunctionComponent = () => {
           <Input
             id="standard-adornment-amount"
             value={HomePrice}
+            inputProps={{ maxLength: 13 }}
             onChange={handleHomePriceChange}
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
           />
@@ -169,6 +170,7 @@ const Form: React.FunctionComponent = () => {
           <Input
             id="standard-adornment-amount"
             value={DownPayment}
+            inputProps={{ maxLength: 3 }}
             onChange={handleDownPaymentChange}
             endAdornment={<InputAdornment position="start">%</InputAdornment>}
           />
@@ -181,6 +183,7 @@ const Form: React.FunctionComponent = () => {
             className="text-2xl"
             id="standard-adornment-amount"
             value={MortgageAmount}
+            inputProps={{ maxLength: 13 }}
             onChange={handleMortgageAmountChange}
             startAdornment={<InputAdornment position="end">$</InputAdornment>}
           />
